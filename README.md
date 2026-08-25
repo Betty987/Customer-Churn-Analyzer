@@ -41,7 +41,7 @@ customer-churn-analytics/
   src/
     generate_dataset.py
     analyze_churn.py
-  requirements.txt
+  requirements-dev.txt
 ```
 
 ## Run Locally
@@ -49,7 +49,7 @@ customer-churn-analytics/
 Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
 
 Generate the dataset:
