@@ -1,0 +1,181 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Customer Churn Analytics</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; color: #16202a; background: #f6faf9; }
+    main { max-width: 1180px; margin: 0 auto; padding: 28px; }
+    h1 { margin-bottom: 6px; font-size: 34px; }
+    .sub { color: #5d6c7b; margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 24px 0; }
+    .card { background: white; border: 1px solid #dce5e8; border-radius: 8px; padding: 18px; box-shadow: 0 12px 32px rgba(22,32,42,.07); }
+    .metric { font-size: 30px; font-weight: 800; color: #087f8c; margin: 0; }
+    .label { color: #647282; margin: 6px 0 0; font-weight: 700; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    img { max-width: 100%; border-radius: 8px; border: 1px solid #dce5e8; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { border-bottom: 1px solid #e5ecef; padding: 9px; text-align: left; }
+    th { color: #087f8c; }
+    @media (max-width: 900px) { .grid, .two { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Customer Churn Analytics & Retention Modeling</h1>
+  <p class="sub">End-to-end data science project: churn analysis, segmentation, predictive modeling, and retention recommendations.</p>
+
+  <section class="grid">
+    <div class="card"><p class="metric">5,000</p><p class="label">Customers</p></div>
+    <div class="card"><p class="metric">18.3%</p><p class="label">Churn Rate</p></div>
+    <div class="card"><p class="metric">$204,725</p><p class="label">Monthly Revenue At Risk</p></div>
+    <div class="card"><p class="metric">0.776</p><p class="label">Best ROC AUC</p></div>
+  </section>
+
+  <section class="two">
+    <div class="card"><h2>Churn by Contract</h2><img src="figures/churn_by_contract.png" alt="Churn by contract chart"></div>
+    <div class="card"><h2>Top Model Drivers</h2><img src="figures/top_features.png" alt="Feature importance chart"></div>
+    <div class="card"><h2>Revenue at Risk</h2><img src="figures/revenue_at_risk.png" alt="Revenue risk chart"></div>
+    <div class="card"><h2>Confusion Matrix</h2><img src="figures/confusion_matrix.png" alt="Confusion matrix"></div>
+  </section>
+
+  <section class="two" style="margin-top: 16px;">
+    <div class="card">
+      <h2>Highest-Risk Segments</h2>
+      <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>contract_type</th>
+      <th>risk_band</th>
+      <th>customers</th>
+      <th>churn_rate</th>
+      <th>revenue_at_risk</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>month-to-month</td>
+      <td>High</td>
+      <td>1001</td>
+      <td>0.454545</td>
+      <td>78300.019450</td>
+    </tr>
+    <tr>
+      <td>one-year</td>
+      <td>High</td>
+      <td>45</td>
+      <td>0.422222</td>
+      <td>3484.418329</td>
+    </tr>
+    <tr>
+      <td>two-year</td>
+      <td>High</td>
+      <td>8</td>
+      <td>0.375000</td>
+      <td>593.011284</td>
+    </tr>
+    <tr>
+      <td>one-year</td>
+      <td>Medium</td>
+      <td>319</td>
+      <td>0.188088</td>
+      <td>14710.253850</td>
+    </tr>
+    <tr>
+      <td>month-to-month</td>
+      <td>Medium</td>
+      <td>1367</td>
+      <td>0.176298</td>
+      <td>64427.995813</td>
+    </tr>
+    <tr>
+      <td>month-to-month</td>
+      <td>Low</td>
+      <td>424</td>
+      <td>0.110849</td>
+      <td>9789.781818</td>
+    </tr>
+    <tr>
+      <td>two-year</td>
+      <td>Medium</td>
+      <td>102</td>
+      <td>0.078431</td>
+      <td>4791.388476</td>
+    </tr>
+    <tr>
+      <td>one-year</td>
+      <td>Low</td>
+      <td>1045</td>
+      <td>0.047847</td>
+      <td>18296.300545</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    <div class="card">
+      <h2>Top Predictive Features</h2>
+      <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>feature</th>
+      <th>importance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>contract type month-to-month</td>
+      <td>1.063581</td>
+    </tr>
+    <tr>
+      <td>contract type two-year</td>
+      <td>0.763377</td>
+    </tr>
+    <tr>
+      <td>satisfaction score</td>
+      <td>0.407824</td>
+    </tr>
+    <tr>
+      <td>tenure months</td>
+      <td>0.394575</td>
+    </tr>
+    <tr>
+      <td>contract type one-year</td>
+      <td>0.300434</td>
+    </tr>
+    <tr>
+      <td>support tickets</td>
+      <td>0.298174</td>
+    </tr>
+    <tr>
+      <td>autopay</td>
+      <td>0.272291</td>
+    </tr>
+    <tr>
+      <td>internet service fiber</td>
+      <td>0.254661</td>
+    </tr>
+    <tr>
+      <td>late payments</td>
+      <td>0.241497</td>
+    </tr>
+    <tr>
+      <td>monthly charges</td>
+      <td>0.175014</td>
+    </tr>
+    <tr>
+      <td>internet service dsl</td>
+      <td>0.139298</td>
+    </tr>
+    <tr>
+      <td>internet service none</td>
+      <td>0.115593</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+  </section>
+</main>
+</body>
+</html>
