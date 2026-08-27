@@ -2,8 +2,6 @@
 
 This project analyzes customer churn for a subscription business and builds a predictive model to identify high-risk customers. It combines exploratory data analysis, segmentation, machine learning, feature importance, and business recommendations.
 
-The goal is to show the full data science workflow: define the business problem, prepare data, model churn risk, interpret drivers, and translate results into retention actions.
-
 ## Project Highlights
 
 - Generated and analyzed a 5,000-customer subscription dataset
