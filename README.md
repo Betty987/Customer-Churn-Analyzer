@@ -1,6 +1,6 @@
 # Customer Churn Analytics & Retention Modeling
 
-This project analyzes customer churn for a subscription business and builds a predictive model to identify high-risk customers. It combines exploratory data analysis, segmentation, machine learning, feature importance, and business recommendations.
+This project analyzes customer churn for a subscription business and builds a predictive model to identify high-risk customers. It combines exploratory data analysis, segmentation, machine learning, feature importance, and business recommendations
 
 ## Project Highlights
 
